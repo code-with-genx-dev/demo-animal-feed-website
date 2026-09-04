@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Centralized Dynamic Color Variables */
+  --color-primary: #1b4332;
+  --color-primary-hover: #143527;
+  --color-primary-light: #eaf5ee;
+  --color-primary-dark: #0d281e;
+  
+  --color-secondary: #2d6a4f;
+  --color-secondary-hover: #245841;
+  --color-secondary-light: #d8f3dc;
+
+  --color-accent: #d97706;
+  --color-accent-hover: #b45309;
+  --color-accent-light: #fef3c7;
+
+  --color-surface: #ffffff;
+  --color-surface-muted: #fbfbf9;
+  --color-neutral-earth: #f4f1ea;
+  --color-neutral-sand: #e8e3d8;
+
+  --color-text-main: #1c241e;
+  --color-text-muted: #526057;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Subtle transition helper */
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
